@@ -11,7 +11,7 @@ import SwiftUI
 struct Contact_POCApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContactView()
         }
     }
 }

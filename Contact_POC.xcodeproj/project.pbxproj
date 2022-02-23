@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */; };
-		23F3C65727C5DE6500F1C42F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65627C5DE6500F1C42F /* ContentView.swift */; };
+		23F3C65727C5DE6500F1C42F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65627C5DE6500F1C42F /* ContactView.swift */; };
 		23F3C65927C5DE6600F1C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F3C65827C5DE6600F1C42F /* Assets.xcassets */; };
 		23F3C65C27C5DE6600F1C42F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F3C65B27C5DE6600F1C42F /* Preview Assets.xcassets */; };
 		23F3C66627C5DE6600F1C42F /* Contact_POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C66527C5DE6600F1C42F /* Contact_POCTests.swift */; };
-		23F3C67027C5DE6600F1C42F /* Contact_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C66F27C5DE6600F1C42F /* Contact_POCUITests.swift */; };
-		23F3C67227C5DE6600F1C42F /* Contact_POCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C67127C5DE6600F1C42F /* Contact_POCUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +34,12 @@
 /* Begin PBXFileReference section */
 		23F3C65127C5DE6500F1C42F /* Contact_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCApp.swift; sourceTree = "<group>"; };
-		23F3C65627C5DE6500F1C42F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		23F3C65627C5DE6500F1C42F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		23F3C65827C5DE6600F1C42F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23F3C65B27C5DE6600F1C42F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23F3C66127C5DE6600F1C42F /* Contact_POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contact_POCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C66527C5DE6600F1C42F /* Contact_POCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCTests.swift; sourceTree = "<group>"; };
 		23F3C66B27C5DE6600F1C42F /* Contact_POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contact_POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		23F3C66F27C5DE6600F1C42F /* Contact_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCUITests.swift; sourceTree = "<group>"; };
-		23F3C67127C5DE6600F1C42F /* Contact_POCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 			children = (
 				23F3C65327C5DE6500F1C42F /* Contact_POC */,
 				23F3C66427C5DE6600F1C42F /* Contact_POCTests */,
-				23F3C66E27C5DE6600F1C42F /* Contact_POCUITests */,
 				23F3C65227C5DE6500F1C42F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,9 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */,
-				23F3C65627C5DE6500F1C42F /* ContentView.swift */,
-				23F3C65827C5DE6600F1C42F /* Assets.xcassets */,
-				23F3C65A27C5DE6600F1C42F /* Preview Content */,
+				23F3C65627C5DE6500F1C42F /* ContactView.swift */,
+				23F3C67E27C5DED700F1C42F /* Resources */,
 			);
 			path = Contact_POC;
 			sourceTree = "<group>";
@@ -118,13 +112,13 @@
 			path = Contact_POCTests;
 			sourceTree = "<group>";
 		};
-		23F3C66E27C5DE6600F1C42F /* Contact_POCUITests */ = {
+		23F3C67E27C5DED700F1C42F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				23F3C66F27C5DE6600F1C42F /* Contact_POCUITests.swift */,
-				23F3C67127C5DE6600F1C42F /* Contact_POCUITestsLaunchTests.swift */,
+				23F3C65827C5DE6600F1C42F /* Assets.xcassets */,
+				23F3C65A27C5DE6600F1C42F /* Preview Content */,
 			);
-			path = Contact_POCUITests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23F3C65727C5DE6500F1C42F /* ContentView.swift in Sources */,
+				23F3C65727C5DE6500F1C42F /* ContactView.swift in Sources */,
 				23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23F3C67227C5DE6600F1C42F /* Contact_POCUITestsLaunchTests.swift in Sources */,
-				23F3C67027C5DE6600F1C42F /* Contact_POCUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -447,7 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

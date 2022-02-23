@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ContactView.swift
 //  Contact_POC
 //
 //  Created by Khang Vu on 23/02/2022.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContactView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContactView()
     }
 }
