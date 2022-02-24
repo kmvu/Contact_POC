@@ -12,8 +12,7 @@ class LocalContactLoaderTests: XCTestCase {
     
     func test_load_sendSpecificQuantityNumber() {
         let expectedQuantity = 1
-        let client = StorageSpy()
-        let sut = LocalContactLoader(with: client, quantity: expectedQuantity)
+        let (sut, client) = makeSUT(quantity: expectedQuantity)
         
         sut.load { _ in }
         
@@ -22,8 +21,7 @@ class LocalContactLoaderTests: XCTestCase {
     
     func test_load_returnsEmptyData() {
         let quantity = 10
-        let client = StorageSpy()
-        let sut = LocalContactLoader(with: client, quantity: quantity)
+        let (sut, client) = makeSUT(quantity: quantity)
         
         sut.load { result in
             switch result {
@@ -41,6 +39,17 @@ class LocalContactLoaderTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    private func makeSUT(quantity: Int = 0,
+                         file: StaticString = #filePath, line: UInt = #line) -> (LocalContactLoader, StorageSpy) {
+        let client = StorageSpy()
+        let sut = LocalContactLoader(with: client, quantity: quantity)
+        
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(client, file: file, line: line)
+        
+        return (sut, client)
+    }
     
     private class StorageSpy: PersistentStorage {
         typealias ResponseHandler = (Result<[ContactItem], Error>) -> Void
