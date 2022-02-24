@@ -6,8 +6,62 @@
 //
 
 import XCTest
-@testable import Contact_POC
+import Contact_POC
 
 class LocalContactLoaderTests: XCTestCase {
     
+    func test_load_sendSpecificQuantityNumber() {
+        let expectedQuantity = 1
+        let client = StorageSpy()
+        let sut = LocalContactLoader(with: client, quantity: expectedQuantity)
+        
+        sut.load { _ in }
+        
+        XCTAssertEqual(client.quantity, expectedQuantity)
+    }
+    
+    func test_load_returnsEmptyData() {
+        let quantity = 10
+        let client = StorageSpy()
+        let sut = LocalContactLoader(with: client, quantity: quantity)
+        
+        sut.load { result in
+            switch result {
+            case .success(let items):
+                XCTAssertEqual(items.count, 0)
+                
+            case .failure:
+                XCTFail("Should not happen. Expected items to have 0 values returned.")
+            }
+        }
+        client.complete(with: [])
+    }
+    
+    func test_loadTwice_retrieveDataTwiceFromStorage() {
+    }
+    
+    // MARK: - Helpers
+    
+    private class StorageSpy: PersistentStorage {
+        typealias ResponseHandler = (Result<[ContactItem], Error>) -> Void
+        private var handlers = [ResponseHandler]()
+        
+        var quantity: Int!
+        
+        func retrieve(quantity: Int,
+                      completion: @escaping (Result<[ContactItem], Error>) -> Void) {
+            self.quantity = quantity
+            handlers.append(completion)
+        }
+        
+        func complete(with contactItem: [ContactItem],
+                      at index: Int = 0) {
+            handlers[index](.success(contactItem))
+        }
+        
+        func complete(with error: Error, at index: Int = 0) {
+            handlers[index](.failure(error))
+        }
+    }
 }
+
