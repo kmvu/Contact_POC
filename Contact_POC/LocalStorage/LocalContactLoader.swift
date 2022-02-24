@@ -9,6 +9,7 @@ import Foundation
 
 public final class LocalContactLoader: ContactManager {
     private let storage: PersistentStorage
+    private let contactQuantity: Int = 10
     
     public enum Error: Swift.Error {
         case invalidData
@@ -20,7 +21,8 @@ public final class LocalContactLoader: ContactManager {
     }
     
     public func load(completion: @escaping (LoadContactResult) -> Void) {
-        storage.retrieve(quantity: 10) { result in
+        storage.retrieve(quantity: contactQuantity) { result in
+            
         }
     }
 }
