@@ -15,7 +15,7 @@
 		23F3C68527C6211900F1C42F /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68427C6211900F1C42F /* ContactManager.swift */; };
 		23F3C68727C6221700F1C42F /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68627C6221700F1C42F /* ContactItem.swift */; };
 		23F3C68A27C64C5800F1C42F /* LocalContactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */; };
-		23F3C68D27C6788300F1C42F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68C27C6788300F1C42F /* Storage.swift */; };
+		23F3C68D27C6788300F1C42F /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68C27C6788300F1C42F /* PersistentStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		23F3C68427C6211900F1C42F /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		23F3C68627C6221700F1C42F /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalContactLoader.swift; sourceTree = "<group>"; };
-		23F3C68C27C6788300F1C42F /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		23F3C68C27C6788300F1C42F /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */,
-				23F3C68C27C6788300F1C42F /* Storage.swift */,
+				23F3C68C27C6788300F1C42F /* PersistentStorage.swift */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				23F3C68527C6211900F1C42F /* ContactManager.swift in Sources */,
 				23F3C68A27C64C5800F1C42F /* LocalContactLoader.swift in Sources */,
 				23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */,
-				23F3C68D27C6788300F1C42F /* Storage.swift in Sources */,
+				23F3C68D27C6788300F1C42F /* PersistentStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

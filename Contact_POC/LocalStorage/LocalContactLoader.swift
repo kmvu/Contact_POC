@@ -8,14 +8,14 @@
 import Foundation
 
 public final class LocalContactLoader: ContactManager {
-    private let storage: Storage
+    private let storage: PersistentStorage
     
     public enum Error: Swift.Error {
         case invalidData
         case unkwown
     }
     
-    public init(with storage: Storage) {
+    public init(with storage: PersistentStorage) {
         self.storage = storage
     }
     
