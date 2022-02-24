@@ -16,6 +16,8 @@ public final class LocalContactLoader: ContactManager {
         case unkwown
     }
     
+    public typealias Result = LoadContactResult
+    
     public init(with storage: PersistentStorage, quantity: Int) {
         self.storage = storage
         self.contactQuantity = quantity

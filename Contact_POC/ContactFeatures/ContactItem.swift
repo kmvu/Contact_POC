@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ContactItem {
+public struct ContactItem: Equatable {
     public let id: UUID
     public let name: String
     public let phoneNumber: String?

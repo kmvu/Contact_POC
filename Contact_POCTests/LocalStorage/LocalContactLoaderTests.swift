@@ -12,16 +12,15 @@ class LocalContactLoaderTests: XCTestCase {
     
     func test_load_sendSpecificQuantityNumber() {
         let expectedQuantity = 1
-        let (sut, client) = makeSUT(quantity: expectedQuantity)
+        let (sut, spy) = makeSUT(quantity: expectedQuantity)
         
         sut.load { _ in }
         
-        XCTAssertEqual(client.quantity, expectedQuantity)
+        XCTAssertEqual(spy.quantity, expectedQuantity)
     }
     
     func test_load_returnsEmptyData() {
-        let quantity = 10
-        let (sut, client) = makeSUT(quantity: quantity)
+        let (sut, spy) = makeSUT()
         
         sut.load { result in
             switch result {
@@ -32,23 +31,44 @@ class LocalContactLoaderTests: XCTestCase {
                 XCTFail("Should not happen. Expected items to have 0 values returned.")
             }
         }
-        client.complete(with: [])
+        spy.complete(with: [])
     }
     
-    func test_loadTwice_retrieveDataTwiceFromStorage() {
+    func test_load_deliversErrorOnspyError() {
+        let (sut, spy) = makeSUT()
+        let expectedResult = failure(.invalidData)
+        
+        sut.load { result in
+            switch (result, expectedResult) {
+            case let (.success(items), .success(expectedItems)):
+                XCTAssertEqual(items, expectedItems)
+            case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
+                XCTAssertEqual(receivedError, expectedError)
+                
+            default:
+                XCTFail("Expected \(expectedResult), but got \(result) instead")
+            }
+        }
+        
+        let error = NSError(domain: "Testing", code: 0)
+        spy.complete(with: error)
     }
     
     // MARK: - Helpers
     
     private func makeSUT(quantity: Int = 0,
                          file: StaticString = #filePath, line: UInt = #line) -> (LocalContactLoader, StorageSpy) {
-        let client = StorageSpy()
-        let sut = LocalContactLoader(with: client, quantity: quantity)
+        let spy = StorageSpy()
+        let sut = LocalContactLoader(with: spy, quantity: quantity)
         
         trackForMemoryLeaks(sut, file: file, line: line)
-        trackForMemoryLeaks(client, file: file, line: line)
+        trackForMemoryLeaks(spy, file: file, line: line)
         
-        return (sut, client)
+        return (sut, spy)
+    }
+    
+    private func failure(_ error: LocalContactLoader.Error) -> LocalContactLoader.Result {
+        return .failure(error)
     }
     
     private class StorageSpy: PersistentStorage {
