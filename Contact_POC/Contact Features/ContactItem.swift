@@ -26,3 +26,13 @@ public struct ContactItem: Equatable {
         self.address = address
     }
 }
+
+public extension ContactItem {
+    static var data: ContactItem {
+        .init(id: UUID(),
+              name: "testContact",
+              phoneNumber: "00000000",
+              emailAddress: "test_email@abc.com",
+              address: "testing_address")
+    }
+}
