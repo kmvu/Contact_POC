@@ -27,6 +27,8 @@ public struct ContactItem: Equatable {
     }
 }
 
+// MARK: - Mocking Data
+
 public extension ContactItem {
     static var data: ContactItem {
         .init(id: UUID(),

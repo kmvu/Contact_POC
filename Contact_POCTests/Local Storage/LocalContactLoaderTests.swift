@@ -12,8 +12,8 @@ class LocalContactLoaderTests: XCTestCase {
     
     func test_load_sendExactQuantityNumber() {
         let expectedQuantity = 1
-        let (sut, spy) = makeSUT(quantity: expectedQuantity)
         
+        let (sut, spy) = makeSUT(quantity: expectedQuantity)
         sut.load { _ in }
         
         XCTAssertEqual(spy.quantity, expectedQuantity)
@@ -21,7 +21,6 @@ class LocalContactLoaderTests: XCTestCase {
     
     func test_load_returnsEmptyData() {
         let (sut, spy) = makeSUT()
-        
         sut.load { result in
             switch result {
             case .success(let items):
@@ -37,9 +36,13 @@ class LocalContactLoaderTests: XCTestCase {
     // MARK: Failure cases
     
     func test_load_deliversErrorOnSpyUnkownError() {
-        let (sut, spy) = makeSUT()
+        // Given
         let expectedResult = failure(LocalContactLoader.Error.unkown)
+
+        // When
+        let (sut, spy) = makeSUT()
         
+        // Then
         expect(sut, toCompleteWith: expectedResult, when: {
             let error = NSError(domain: "UnkownSpy", code: 0)
             spy.complete(withError: error)
@@ -47,8 +50,9 @@ class LocalContactLoaderTests: XCTestCase {
     }
     
     func test_load_deliversErrorOnSpyInvalidQuantityError() {
-        let (sut, spy) = makeSUT()
         let expectedResult = failure(LocalContactLoader.Error.invalidQuantity)
+
+        let (sut, spy) = makeSUT()
         
         expect(sut, toCompleteWith: expectedResult, when: {
             let error = LocalContactLoader.Error.invalidQuantity as NSError
@@ -58,26 +62,19 @@ class LocalContactLoaderTests: XCTestCase {
     
     // MARK: Success cases
     
-    func test_load_succeedsOnLoadOneContact() {
-        let expectedQuantity = 1
-        let (sut, spy) = makeSUT(quantity: expectedQuantity)
+    func test_load_succeedsOnLoadingAnyContacts() {
+        // Given
+        let expectedQuantity = 10
         let expectedValue = mockContacts(expectedQuantity)
+        let expectedResult = success(expectedValue)
         
-        let exp = expectation(description: "Wait for completion")
+        // When
+        let (sut, spy) = makeSUT(quantity: expectedQuantity)
         
-        sut.load { result in
-            switch result {
-            case let .success(receivedValue):
-                XCTAssertEqual(receivedValue, expectedValue)
-                
-            case let .failure(error):
-                XCTFail("Expect to complete without error, but got error: \(error.localizedDescription)")
-            }
-            exp.fulfill()
-        }
-        spy.complete(withContacts: expectedValue)
-        
-        wait(for: [exp], timeout: 1.0)
+        // Then
+        expect(sut, toCompleteWith: expectedResult, when: {
+            spy.complete(withContacts: expectedValue)
+        })
     }
     
     // MARK: - Mocks
@@ -103,8 +100,8 @@ class LocalContactLoaderTests: XCTestCase {
                         when action: () -> Void) {
         let exp = expectation(description: "Wait for completion")
         
-        sut.load { result in
-            switch (result, expectedResult) {
+        sut.load { receivedResult in
+            switch (receivedResult, expectedResult) {
             case let (.success(items), .success(expectedItems)):
                 XCTAssertEqual(items, expectedItems)
                 
@@ -113,13 +110,17 @@ class LocalContactLoaderTests: XCTestCase {
                 XCTAssertEqual(receivedError, expectedError)
                 
             default:
-                XCTFail("Expected \(expectedResult), but got \(result) instead")
+                XCTFail("Expected \(expectedResult), but got \(receivedResult) instead")
             }
             exp.fulfill()
         }
         action()
 
         wait(for: [exp], timeout: 1.0)
+    }
+    
+    private func success(_ value: [ContactItem]) -> LocalContactLoader.Result {
+        return .success(value)
     }
     
     private func failure(_ error: LocalContactLoader.Error) -> LocalContactLoader.Result {
