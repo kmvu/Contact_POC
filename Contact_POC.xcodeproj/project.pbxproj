@@ -101,8 +101,8 @@
 			children = (
 				23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */,
 				23FB8C9D27C741F100FC5B59 /* UI */,
-				23F3C68B27C6504600F1C42F /* LocalStorage */,
-				23F3C68327C620A000F1C42F /* ContactFeatures */,
+				23F3C68B27C6504600F1C42F /* Local Storage */,
+				23F3C68327C620A000F1C42F /* Contact Features */,
 				23F3C67E27C5DED700F1C42F /* Resources */,
 			);
 			path = Contact_POC;
@@ -119,7 +119,7 @@
 		23F3C66427C5DE6600F1C42F /* Contact_POCTests */ = {
 			isa = PBXGroup;
 			children = (
-				23F3C68827C6485600F1C42F /* LocalStorage */,
+				23F3C68827C6485600F1C42F /* Local Storage */,
 			);
 			path = Contact_POCTests;
 			sourceTree = "<group>";
@@ -133,31 +133,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		23F3C68327C620A000F1C42F /* ContactFeatures */ = {
+		23F3C68327C620A000F1C42F /* Contact Features */ = {
 			isa = PBXGroup;
 			children = (
 				23F3C68627C6221700F1C42F /* ContactItem.swift */,
 				23F3C68427C6211900F1C42F /* ContactManager.swift */,
 			);
-			path = ContactFeatures;
+			path = "Contact Features";
 			sourceTree = "<group>";
 		};
-		23F3C68827C6485600F1C42F /* LocalStorage */ = {
+		23F3C68827C6485600F1C42F /* Local Storage */ = {
 			isa = PBXGroup;
 			children = (
-				23FB8C9E27C7757200FC5B59 /* Helpers */,
 				23F3C66527C5DE6600F1C42F /* LocalContactLoaderTests.swift */,
+				23FB8C9E27C7757200FC5B59 /* Helpers */,
 			);
-			path = LocalStorage;
+			path = "Local Storage";
 			sourceTree = "<group>";
 		};
-		23F3C68B27C6504600F1C42F /* LocalStorage */ = {
+		23F3C68B27C6504600F1C42F /* Local Storage */ = {
 			isa = PBXGroup;
 			children = (
 				23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */,
 				23F3C68C27C6788300F1C42F /* PersistentStorage.swift */,
 			);
-			path = LocalStorage;
+			path = "Local Storage";
 			sourceTree = "<group>";
 		};
 		23FB8C9D27C741F100FC5B59 /* UI */ = {

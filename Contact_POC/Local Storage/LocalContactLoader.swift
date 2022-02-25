@@ -12,8 +12,8 @@ public final class LocalContactLoader: ContactManager {
     private let contactQuantity: Int
     
     public enum Error: Swift.Error {
-        case invalidData
-        case unkwown
+        case invalidQuantity
+        case unkown
     }
     
     public typealias Result = LoadContactResult
@@ -29,8 +29,11 @@ public final class LocalContactLoader: ContactManager {
             case let .success(contactItems):
                 completion(.success(contactItems))
                 
-            case .failure:
-                completion(.failure(Error.invalidData))
+            case .failure(Error.invalidQuantity):
+                completion(.failure(Error.invalidQuantity))
+                
+            default:
+                completion(.failure(Error.unkown))
             }
         }
     }
