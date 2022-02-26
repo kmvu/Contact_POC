@@ -14,8 +14,10 @@ struct ContactView: View {
     }
 }
 
+#if !TESTING
 struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
         ContactView()
     }
 }
+#endif
