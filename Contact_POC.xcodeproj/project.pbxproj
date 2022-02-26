@@ -27,13 +27,6 @@
 			remoteGlobalIDString = 23F3C65027C5DE6500F1C42F;
 			remoteInfo = Contact_POC;
 		};
-		23F3C66C27C5DE6600F1C42F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 23F3C64927C5DE6500F1C42F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 23F3C65027C5DE6500F1C42F;
-			remoteInfo = Contact_POC;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +37,6 @@
 		23F3C65B27C5DE6600F1C42F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23F3C66127C5DE6600F1C42F /* Contact_POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contact_POCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C66527C5DE6600F1C42F /* LocalContactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalContactLoaderTests.swift; sourceTree = "<group>"; };
-		23F3C66B27C5DE6600F1C42F /* Contact_POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contact_POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C68427C6211900F1C42F /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		23F3C68627C6221700F1C42F /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalContactLoader.swift; sourceTree = "<group>"; };
@@ -61,13 +53,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23F3C65E27C5DE6600F1C42F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		23F3C66827C5DE6600F1C42F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,7 +76,6 @@
 			children = (
 				23F3C65127C5DE6500F1C42F /* Contact_POC.app */,
 				23F3C66127C5DE6600F1C42F /* Contact_POCTests.xctest */,
-				23F3C66B27C5DE6600F1C42F /* Contact_POCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,24 +198,6 @@
 			productReference = 23F3C66127C5DE6600F1C42F /* Contact_POCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		23F3C66A27C5DE6600F1C42F /* Contact_POCUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 23F3C67B27C5DE6600F1C42F /* Build configuration list for PBXNativeTarget "Contact_POCUITests" */;
-			buildPhases = (
-				23F3C66727C5DE6600F1C42F /* Sources */,
-				23F3C66827C5DE6600F1C42F /* Frameworks */,
-				23F3C66927C5DE6600F1C42F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				23F3C66D27C5DE6600F1C42F /* PBXTargetDependency */,
-			);
-			name = Contact_POCUITests;
-			productName = Contact_POCUITests;
-			productReference = 23F3C66B27C5DE6600F1C42F /* Contact_POCUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,10 +212,6 @@
 						CreatedOnToolsVersion = 13.2;
 					};
 					23F3C66027C5DE6600F1C42F = {
-						CreatedOnToolsVersion = 13.2;
-						TestTargetID = 23F3C65027C5DE6500F1C42F;
-					};
-					23F3C66A27C5DE6600F1C42F = {
 						CreatedOnToolsVersion = 13.2;
 						TestTargetID = 23F3C65027C5DE6500F1C42F;
 					};
@@ -270,7 +232,6 @@
 			targets = (
 				23F3C65027C5DE6500F1C42F /* Contact_POC */,
 				23F3C66027C5DE6600F1C42F /* Contact_POCTests */,
-				23F3C66A27C5DE6600F1C42F /* Contact_POCUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,13 +247,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23F3C65F27C5DE6600F1C42F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		23F3C66927C5DE6600F1C42F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,13 +278,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23F3C66727C5DE6600F1C42F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -338,11 +285,6 @@
 			isa = PBXTargetDependency;
 			target = 23F3C65027C5DE6500F1C42F /* Contact_POC */;
 			targetProxy = 23F3C66227C5DE6600F1C42F /* PBXContainerItemProxy */;
-		};
-		23F3C66D27C5DE6600F1C42F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 23F3C65027C5DE6500F1C42F /* Contact_POC */;
-			targetProxy = 23F3C66C27C5DE6600F1C42F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -422,6 +364,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,28 +393,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contact_POC.app/Contact_POC";
-			};
-			name = Testing;
-		};
-		23385D1E27C9D17E00E5298A /* Testing */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Contact_POC;
 			};
 			name = Testing;
 		};
@@ -605,6 +531,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -634,6 +561,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -662,6 +590,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,46 +611,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contact_POC.app/Contact_POC";
-			};
-			name = Release;
-		};
-		23F3C67C27C5DE6600F1C42F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Contact_POC;
-			};
-			name = Debug;
-		};
-		23F3C67D27C5DE6600F1C42F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Contact_POC;
 			};
 			name = Release;
 		};
@@ -754,16 +648,6 @@
 				23F3C67927C5DE6600F1C42F /* Debug */,
 				23385D1D27C9D17E00E5298A /* Testing */,
 				23F3C67A27C5DE6600F1C42F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		23F3C67B27C5DE6600F1C42F /* Build configuration list for PBXNativeTarget "Contact_POCUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				23F3C67C27C5DE6600F1C42F /* Debug */,
-				23385D1E27C9D17E00E5298A /* Testing */,
-				23F3C67D27C5DE6600F1C42F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
