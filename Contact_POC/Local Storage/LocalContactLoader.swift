@@ -29,11 +29,8 @@ public final class LocalContactLoader: ContactManager {
             case let .success(contactItems):
                 completion(.success(contactItems))
                 
-            case .failure(Error.invalidQuantity):
+            case .failure:
                 completion(.failure(Error.invalidQuantity))
-                
-            default:
-                completion(.failure(Error.unkown))
             }
         }
     }

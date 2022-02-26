@@ -35,20 +35,6 @@ class LocalContactLoaderTests: XCTestCase {
     
     // MARK: Failure cases
     
-    func test_load_deliversErrorOnSpyUnkownError() {
-        // Given
-        let expectedResult = failure(LocalContactLoader.Error.unkown)
-
-        // When
-        let (sut, spy) = makeSUT()
-        
-        // Then
-        expect(sut, toCompleteWith: expectedResult, when: {
-            let error = NSError(domain: "UnkownSpy", code: 0)
-            spy.complete(withError: error)
-        })
-    }
-    
     func test_load_deliversErrorOnSpyInvalidQuantityError() {
         let expectedResult = failure(LocalContactLoader.Error.invalidQuantity)
 
