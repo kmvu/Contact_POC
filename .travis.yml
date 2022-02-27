@@ -1,4 +1,0 @@
-os: osx
-osx_image: xcode13.2
-language: swift
-script: xcodebuild clean test -project Contact_POC.xcodeproj -scheme "CI" -destination 'platform=iOS Simulator,name=iPhone 13 Pro,OS=15.2' CODE_SIGNING_IDENTITY="Apple Development" CODE_SIGNING_REQUIRED=YES
