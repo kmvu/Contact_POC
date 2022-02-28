@@ -66,7 +66,7 @@ class LocalContactLoaderTests: XCTestCase {
     // MARK: - Mocks
     
     private var mockContacts: ((Int) -> [ContactItem]) = { quantity in
-        return Array(repeating: .data, count: quantity)
+        return Array(repeating: .data(0), count: quantity)
     }
     
     // MARK: - Helpers
