@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C11CD327CB6344001243C8 /* PersistentStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C11CD227CB6344001243C8 /* PersistentStorageTests.swift */; };
 		23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */; };
 		23F3C65727C5DE6500F1C42F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65627C5DE6500F1C42F /* ContactView.swift */; };
 		23F3C65927C5DE6600F1C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F3C65827C5DE6600F1C42F /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23C11CD227CB6344001243C8 /* PersistentStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageTests.swift; sourceTree = "<group>"; };
 		23F3C65127C5DE6500F1C42F /* Contact_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCApp.swift; sourceTree = "<group>"; };
 		23F3C65627C5DE6500F1C42F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				23F3C66527C5DE6600F1C42F /* LocalContactLoaderTests.swift */,
+				23C11CD227CB6344001243C8 /* PersistentStorageTests.swift */,
 				23FB8C9E27C7757200FC5B59 /* Helpers */,
 			);
 			path = "Local Storage";
@@ -218,7 +221,7 @@
 				};
 			};
 			buildConfigurationList = 23F3C64C27C5DE6500F1C42F /* Build configuration list for PBXProject "Contact_POC" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -275,6 +278,7 @@
 			files = (
 				23F3C66627C5DE6600F1C42F /* LocalContactLoaderTests.swift in Sources */,
 				23FB8CA027C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift in Sources */,
+				23C11CD327CB6344001243C8 /* PersistentStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -361,7 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
+				DEVELOPMENT_TEAM = AN8J3853WZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -395,7 +399,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCTests";
@@ -459,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -516,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -537,7 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
+				DEVELOPMENT_TEAM = AN8J3853WZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -569,7 +573,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Contact_POC/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
+				DEVELOPMENT_TEAM = AN8J3853WZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -603,7 +607,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCTests";
@@ -627,7 +631,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KJ4AY9PJW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khang.vu.studio.Contact-POCTests";
