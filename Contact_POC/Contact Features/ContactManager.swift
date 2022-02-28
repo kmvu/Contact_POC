@@ -13,5 +13,6 @@ public enum LoadContactResult {
 }
 
 public protocol ContactManager {
-    func load(completion: @escaping (LoadContactResult) -> Void)
+    func load(withQuantity quantity: Int,
+              completion: @escaping (LoadContactResult) -> Void)
 }

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Contact_POCApp: App {
+    let contactManager: ContactManager = LocalContactLoader(with: LocalStorage())
+    
     var body: some Scene {
         WindowGroup {
-            ContactView()
+            ContactView(storage: contactManager)
         }
     }
 }

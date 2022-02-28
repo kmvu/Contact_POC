@@ -13,15 +13,15 @@ class LocalContactLoaderTests: XCTestCase {
     func test_load_sendExactQuantityNumber() {
         let expectedQuantity = 1
         
-        let (sut, spy) = makeSUT(quantity: expectedQuantity)
-        sut.load { _ in }
+        let (sut, spy) = makeSUT()
+        sut.load(withQuantity: expectedQuantity) { _ in }
         
         XCTAssertEqual(spy.quantity, expectedQuantity)
     }
     
     func test_load_returnsEmptyData() {
         let (sut, spy) = makeSUT()
-        sut.load { result in
+        sut.load(withQuantity: 0) { result in
             switch result {
             case .success(let items):
                 XCTAssertEqual(items.count, 0)
@@ -55,10 +55,10 @@ class LocalContactLoaderTests: XCTestCase {
         let expectedResult = success(expectedValue)
         
         // When
-        let (sut, spy) = makeSUT(quantity: expectedQuantity)
+        let (sut, spy) = makeSUT()
         
         // Then
-        expect(sut, toCompleteWith: expectedResult, when: {
+        expect(sut, toCompleteWith: expectedResult, andQuantity: expectedQuantity, when: {
             spy.complete(withContacts: expectedValue)
         })
     }
@@ -71,9 +71,9 @@ class LocalContactLoaderTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(quantity: Int = 0) -> (LocalContactLoader, StorageSpy) {
+    private func makeSUT() -> (LocalContactLoader, StorageSpy) {
         let spy = StorageSpy()
-        let sut = LocalContactLoader(with: spy, quantity: quantity)
+        let sut = LocalContactLoader(with: spy)
         
         trackForMemoryLeaks(sut)
         trackForMemoryLeaks(spy)
@@ -83,10 +83,11 @@ class LocalContactLoaderTests: XCTestCase {
     
     private func expect(_ sut: LocalContactLoader,
                         toCompleteWith expectedResult: LocalContactLoader.Result,
+                        andQuantity expectedQuantity: Int = 0,
                         when action: () -> Void) {
         let exp = expectation(description: "Wait for completion")
         
-        sut.load { receivedResult in
+        sut.load(withQuantity: expectedQuantity) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(items), .success(expectedItems)):
                 XCTAssertEqual(items, expectedItems)

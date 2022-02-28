@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct ContactItem: Equatable {
+public struct ContactItem: Equatable, Identifiable, Hashable {
     public let id: Int
     public let name: String
-    public let phoneNumber: String?
+    public var phoneNumber: String?
     public let emailAddress: String?
     public let address: String?
     

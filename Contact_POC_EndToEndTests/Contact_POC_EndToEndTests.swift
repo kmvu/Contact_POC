@@ -48,7 +48,7 @@ class Contact_POC_EndToEndTests: XCTestCase {
 
     private func getLocalContacts(quantity: Int) -> LoadContactResult? {
         let client = LocalStorage()
-        let loader = LocalContactLoader(with: client, quantity: quantity)
+        let loader = LocalContactLoader(with: client)
 
         trackForMemoryLeaks(client)
         trackForMemoryLeaks(loader)
@@ -56,7 +56,7 @@ class Contact_POC_EndToEndTests: XCTestCase {
         let exp = expectation(description: "Wait for retrieving")
         var receivedContacts: LoadContactResult?
 
-        loader.load { result in
+        loader.load(withQuantity: quantity) { result in
             receivedContacts = result
             exp.fulfill()
         }

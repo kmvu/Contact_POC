@@ -24,3 +24,23 @@ public class LocalStorage: PersistentStorage {
         completion(.success(resultContacts))
     }
 }
+
+extension LocalStorage {
+    static var mockContacts: (Int) -> [ContactItem] = { quantity in
+        var contacts: [ContactItem] = []
+        
+        for id in 1...quantity {
+            var item = ContactItem.data(id)
+            item.phoneNumber = "123456789".random()
+            
+            contacts.append(item)
+        }
+        return contacts
+    }
+}
+
+extension String {
+    func random() -> String {
+        return String(Int.random(in: 123456789..<((123456789 * 10) + 9)))
+    }
+}
