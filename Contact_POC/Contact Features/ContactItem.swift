@@ -7,16 +7,16 @@
 
 import Foundation
 
-public struct ContactItem: Equatable, Identifiable, Hashable {
+public struct ContactItem: Equatable, Identifiable, Codable, Hashable {
     public let id: Int
     public let name: String
-    public var phoneNumber: String?
+    public var phoneNumber: String
     public let emailAddress: String?
     public let address: String?
     
     public init(id: Int,
                 name: String,
-                phoneNumber: String?,
+                phoneNumber: String,
                 emailAddress: String?,
                 address: String?) {
         self.id = id
@@ -32,7 +32,7 @@ public struct ContactItem: Equatable, Identifiable, Hashable {
 public extension ContactItem {
     static var data: (Int) -> ContactItem = { id in
         .init(id: id,
-              name: "testContact",
+              name: "testContact ",
               phoneNumber: "00000000",
               emailAddress: "test_email@abc.com",
               address: "testing_address")

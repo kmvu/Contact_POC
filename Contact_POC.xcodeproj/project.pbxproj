@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23A10FD227CCB7E700782B73 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10FD127CCB7E700782B73 /* ContactsViewModel.swift */; };
+		23A10FD727CD262300782B73 /* MOCK_DATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 23A10FD627CD262300782B73 /* MOCK_DATA.json */; };
 		23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */; };
 		23F3C65727C5DE6500F1C42F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65627C5DE6500F1C42F /* ContactView.swift */; };
 		23F3C65927C5DE6600F1C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F3C65827C5DE6600F1C42F /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23A10FD127CCB7E700782B73 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		23A10FD627CD262300782B73 /* MOCK_DATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MOCK_DATA.json; path = ../../../../../../../Downloads/MOCK_DATA.json; sourceTree = "<group>"; };
 		23F3C65127C5DE6500F1C42F /* Contact_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCApp.swift; sourceTree = "<group>"; };
 		23F3C65627C5DE6500F1C42F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23A10FD327CCB7ED00782B73 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				23A10FD127CCB7E700782B73 /* ContactsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		23F3C64827C5DE6500F1C42F = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +123,7 @@
 			children = (
 				23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */,
 				23FB8C9D27C741F100FC5B59 /* UI */,
+				23A10FD327CCB7ED00782B73 /* ViewModels */,
 				23F3C68B27C6504600F1C42F /* Local Storage */,
 				23F3C68327C620A000F1C42F /* Contact Features */,
 				23F3C67E27C5DED700F1C42F /* Resources */,
@@ -138,6 +151,7 @@
 		23F3C67E27C5DED700F1C42F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				23A10FD627CD262300782B73 /* MOCK_DATA.json */,
 				23F3C65827C5DE6600F1C42F /* Assets.xcassets */,
 				23F3C65A27C5DE6600F1C42F /* Preview Content */,
 			);
@@ -301,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D767625827CC7F6E00F3F9EA /* Launch Screen.storyboard in Resources */,
+				23A10FD727CD262300782B73 /* MOCK_DATA.json in Resources */,
 				23F3C65C27C5DE6600F1C42F /* Preview Assets.xcassets in Resources */,
 				23F3C65927C5DE6600F1C42F /* Assets.xcassets in Resources */,
 			);
@@ -332,6 +347,7 @@
 				23F3C68527C6211900F1C42F /* ContactManager.swift in Sources */,
 				23F3C68A27C64C5800F1C42F /* LocalContactLoader.swift in Sources */,
 				23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */,
+				23A10FD227CCB7E700782B73 /* ContactsViewModel.swift in Sources */,
 				D767623C27CC78A700F3F9EA /* LocalStorage.swift in Sources */,
 				23F3C68D27C6788300F1C42F /* PersistentStorage.swift in Sources */,
 			);

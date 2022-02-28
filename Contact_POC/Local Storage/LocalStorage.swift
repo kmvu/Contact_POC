@@ -25,22 +25,39 @@ public class LocalStorage: PersistentStorage {
     }
 }
 
+// MARK: - JSON Samples data
+
 extension LocalStorage {
-    static var mockContacts: (Int) -> [ContactItem] = { quantity in
-        var contacts: [ContactItem] = []
-        
-        for id in 1...quantity {
-            var item = ContactItem.data(id)
-            item.phoneNumber = "123456789".random()
-            
-            contacts.append(item)
+    static func contactsList(quantity: Int) -> [ContactItem] {
+        guard let path = Bundle.main.path(forResource: "MOCK_DATA", ofType: "json") else {
+            return []
         }
-        return contacts
+        
+        do {
+            let url = URL(fileURLWithPath: path)
+            let data = try Data(contentsOf: url, options: .mappedIfSafe)
+            
+            let jsonResult = try JSONDecoder().decode([ContactItem].self, from: data)
+            debugPrint(jsonResult)
+            
+            return Array(jsonResult[0..<quantity])
+        } catch {
+            
+            return []
+        }
     }
 }
 
-extension String {
-    func random() -> String {
-        return String(Int.random(in: 123456789..<((123456789 * 10) + 9)))
+// MARK: - Mocking for testing
+
+extension LocalStorage {
+    static let mockContacts: (Int) -> [ContactItem] = { quantity in
+        var contacts: [ContactItem] = []
+        
+        for id in 1...quantity {
+            let item = ContactItem.data(id)
+            contacts.append(item)
+        }
+        return contacts
     }
 }
