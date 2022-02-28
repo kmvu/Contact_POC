@@ -8,13 +8,13 @@
 import Foundation
 
 public struct ContactItem: Equatable {
-    public let id: UUID
+    public let id: Int
     public let name: String
     public let phoneNumber: String?
     public let emailAddress: String?
     public let address: String?
     
-    public init(id: UUID,
+    public init(id: Int,
                 name: String,
                 phoneNumber: String?,
                 emailAddress: String?,
@@ -30,8 +30,8 @@ public struct ContactItem: Equatable {
 // MARK: - Mocking Data
 
 public extension ContactItem {
-    static var data: ContactItem {
-        .init(id: UUID(),
+    static var data: (Int) -> ContactItem = { id in
+        .init(id: id,
               name: "testContact",
               phoneNumber: "00000000",
               emailAddress: "test_email@abc.com",
