@@ -40,6 +40,16 @@
                ReferencedContainer = "container:Contact_POC.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D767624827CC7ED300F3F9EA"
+               BuildableName = "Contact_POC_EndToEndTests.xctest"
+               BlueprintName = "Contact_POC_EndToEndTests"
+               ReferencedContainer = "container:Contact_POC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
