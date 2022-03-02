@@ -21,6 +21,7 @@ struct ContactView: View {
                     Text("Phone #: \(contactItem.phoneNumber)")
                 }
             }
+            .navigationTitle("Contacts")
 
         case .failure:
             Text("There are no contacts found.")

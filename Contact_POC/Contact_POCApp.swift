@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct Contact_POCApp: App {
-    private static let mockDataFileName = "MOCK_DATA"
+    private static let resourceFileName = "MOCK_DATA"
     
     @StateObject var contactsLoader = LocalContactLoader(
-        with: LocalStorage(resourceFileName: mockDataFileName))
+        with: LocalStorage(resourceFileName: resourceFileName))
     
     var body: some Scene {
         WindowGroup {

@@ -12,9 +12,9 @@ public final class LocalContactLoader: ContactManager, ObservableObject {
     @Published var contacts: Result = .failure(Error.empty)
     
     public enum Error: Swift.Error {
-        case invalidQuantity
-        case invalidFormat
-        case empty
+        case invalidQuantity // When the requested quantity is less then 0
+        case invalidFormat   // When the parsed response format is invalid
+        case empty           // When there are no response
     }
     
     public typealias Result = LoadContactResult

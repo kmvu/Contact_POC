@@ -15,8 +15,8 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
+            // Textfield to key in the number of contacts to retrieve from storage.
             Spacer()
-            
             VStack {
                 Text("Number of contacts")
                     .font(.body)
@@ -32,10 +32,9 @@ struct HomeView: View {
                     Spacer()
                 }
             }
-         
             Spacer()
             
-            // Show Contacts button - click on to see the list of items
+            // Show Contacts button - click on to see the list of items.
             let contactView = ContactView(contactsLoader: contactsLoader,
                                           quantity: $quantity)
                 .onAppear {
