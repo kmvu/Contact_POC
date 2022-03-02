@@ -45,7 +45,7 @@ class Contact_POC_EndToEndTests: XCTestCase {
         }
     }
     
-    func test_endToEndRetrieveData_withEmptySamples() {
+    func test_endToEndRetrieveData_withEmptySample() {
         let resourceFileName = "INVALID_DATA"
         let receivedContacts = getLocalContacts(resourceName: resourceFileName, quantity: 2)
 
