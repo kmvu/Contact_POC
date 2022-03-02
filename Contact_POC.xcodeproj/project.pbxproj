@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233D281827CF687C004B67D0 /* SwiftlySearch in Frameworks */ = {isa = PBXBuildFile; productRef = 233D281727CF687C004B67D0 /* SwiftlySearch */; };
 		2379C7F327CF2A1E00330D88 /* CORRUPTED_DATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 2379C7F227CF2A1E00330D88 /* CORRUPTED_DATA.json */; };
 		23A10FD227CCB7E700782B73 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10FD127CCB7E700782B73 /* ContactsViewModel.swift */; };
 		23AC7C4D27CE5900005E4516 /* MOCK_DATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 23AC7C4C27CE5900005E4516 /* MOCK_DATA.json */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233D281827CF687C004B67D0 /* SwiftlySearch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +243,9 @@
 			dependencies = (
 			);
 			name = Contact_POC;
+			packageProductDependencies = (
+				233D281727CF687C004B67D0 /* SwiftlySearch */,
+			);
 			productName = Contact_POC;
 			productReference = 23F3C65127C5DE6500F1C42F /* Contact_POC.app */;
 			productType = "com.apple.product-type.application";
@@ -313,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 23F3C64827C5DE6500F1C42F;
+			packageReferences = (
+				233D281627CF687C004B67D0 /* XCRemoteSwiftPackageReference "SwiftlySearch" */,
+			);
 			productRefGroup = 23F3C65227C5DE6500F1C42F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -869,6 +877,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		233D281627CF687C004B67D0 /* XCRemoteSwiftPackageReference "SwiftlySearch" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thislooksfun/SwiftlySearch.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		233D281727CF687C004B67D0 /* SwiftlySearch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233D281627CF687C004B67D0 /* XCRemoteSwiftPackageReference "SwiftlySearch" */;
+			productName = SwiftlySearch;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23F3C64927C5DE6500F1C42F /* Project object */;
 }
