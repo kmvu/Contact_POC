@@ -9,11 +9,16 @@ import SwiftUI
 
 @main
 struct Contact_POCApp: App {
-    let contactManager: ContactManager = LocalContactLoader(with: LocalStorage())
+    private static let mockDataFileName = "MOCK_DATA"
+    
+    @StateObject var contactsLoader = LocalContactLoader(
+        with: LocalStorage(resourceFileName: mockDataFileName))
     
     var body: some Scene {
         WindowGroup {
-            ContactView(storage: contactManager)
+            NavigationView {
+                HomeView(contactsLoader: contactsLoader)
+            }
         }
     }
 }

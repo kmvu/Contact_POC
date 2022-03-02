@@ -7,12 +7,14 @@
 
 import Foundation
 
-public final class LocalContactLoader: ContactManager {
+public final class LocalContactLoader: ContactManager, ObservableObject {
     private let storage: PersistentStorage
+    @Published var contacts: Result = .failure(Error.empty)
     
     public enum Error: Swift.Error {
         case invalidQuantity
-        case unkown
+        case invalidFormat
+        case empty
     }
     
     public typealias Result = LoadContactResult
@@ -23,13 +25,22 @@ public final class LocalContactLoader: ContactManager {
     
     public func load(withQuantity quantity: Int,
                      completion: @escaping (LoadContactResult) -> Void) {
-        storage.retrieve(quantity: quantity) { result in
+        storage.retrieve(quantity: quantity) { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case let .success(contactItems):
-                completion(.success(contactItems))
+                guard contactItems.isEmpty == false else {
+                    self.contacts = .failure(Error.empty)
+                    completion(self.contacts)
+                    return
+                }
+                self.contacts = .success(contactItems) // Publish back the items
+                completion(self.contacts)
                 
-            case .failure:
-                completion(.failure(Error.invalidQuantity))
+            case let .failure(error):
+                self.contacts = .failure(error)
+                completion(.failure(error))
             }
         }
     }

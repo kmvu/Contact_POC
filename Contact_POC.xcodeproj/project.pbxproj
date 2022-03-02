@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2379C7F327CF2A1E00330D88 /* CORRUPTED_DATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 2379C7F227CF2A1E00330D88 /* CORRUPTED_DATA.json */; };
 		23A10FD227CCB7E700782B73 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10FD127CCB7E700782B73 /* ContactsViewModel.swift */; };
-		23A10FD727CD262300782B73 /* MOCK_DATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 23A10FD627CD262300782B73 /* MOCK_DATA.json */; };
+		23AC7C4D27CE5900005E4516 /* MOCK_DATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 23AC7C4C27CE5900005E4516 /* MOCK_DATA.json */; };
+		23AC7C4F27CE5DA0005E4516 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC7C4E27CE5DA0005E4516 /* HomeView.swift */; };
 		23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */; };
 		23F3C65727C5DE6500F1C42F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C65627C5DE6500F1C42F /* ContactView.swift */; };
 		23F3C65927C5DE6600F1C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F3C65827C5DE6600F1C42F /* Assets.xcassets */; };
@@ -17,7 +19,6 @@
 		23F3C68527C6211900F1C42F /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68427C6211900F1C42F /* ContactManager.swift */; };
 		23F3C68727C6221700F1C42F /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68627C6221700F1C42F /* ContactItem.swift */; };
 		23F3C68A27C64C5800F1C42F /* LocalContactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */; };
-		23F3C68D27C6788300F1C42F /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3C68C27C6788300F1C42F /* PersistentStorage.swift */; };
 		23FB8CA027C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FB8C9F27C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift */; };
 		D767623C27CC78A700F3F9EA /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767623B27CC78A700F3F9EA /* LocalStorage.swift */; };
 		D767624C27CC7ED300F3F9EA /* Contact_POC_EndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767624B27CC7ED300F3F9EA /* Contact_POC_EndToEndTests.swift */; };
@@ -43,8 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2379C7F227CF2A1E00330D88 /* CORRUPTED_DATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CORRUPTED_DATA.json; sourceTree = "<group>"; };
 		23A10FD127CCB7E700782B73 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
-		23A10FD627CD262300782B73 /* MOCK_DATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MOCK_DATA.json; path = ../../../../../../../Downloads/MOCK_DATA.json; sourceTree = "<group>"; };
+		23AC7C4C27CE5900005E4516 /* MOCK_DATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MOCK_DATA.json; sourceTree = "<group>"; };
+		23AC7C4E27CE5DA0005E4516 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		23F3C65127C5DE6500F1C42F /* Contact_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F3C65427C5DE6500F1C42F /* Contact_POCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POCApp.swift; sourceTree = "<group>"; };
 		23F3C65627C5DE6500F1C42F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		23F3C68427C6211900F1C42F /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		23F3C68627C6221700F1C42F /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalContactLoader.swift; sourceTree = "<group>"; };
-		23F3C68C27C6788300F1C42F /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		23FB8C9F27C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaksTracking.swift"; sourceTree = "<group>"; };
 		D767623B27CC78A700F3F9EA /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		D767624927CC7ED300F3F9EA /* Contact_POC_EndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contact_POC_EndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2379C7F127CF29B900330D88 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2379C7F227CF2A1E00330D88 /* CORRUPTED_DATA.json */,
+				23AC7C4C27CE5900005E4516 /* MOCK_DATA.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		23A10FD327CCB7ED00782B73 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +162,7 @@
 		23F3C67E27C5DED700F1C42F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				23A10FD627CD262300782B73 /* MOCK_DATA.json */,
+				2379C7F127CF29B900330D88 /* JSON */,
 				23F3C65827C5DE6600F1C42F /* Assets.xcassets */,
 				23F3C65A27C5DE6600F1C42F /* Preview Content */,
 			);
@@ -180,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				23F3C68927C64C5800F1C42F /* LocalContactLoader.swift */,
-				23F3C68C27C6788300F1C42F /* PersistentStorage.swift */,
 				D767623B27CC78A700F3F9EA /* LocalStorage.swift */,
 			);
 			path = "Local Storage";
@@ -189,6 +199,7 @@
 		23FB8C9D27C741F100FC5B59 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				23AC7C4E27CE5DA0005E4516 /* HomeView.swift */,
 				23F3C65627C5DE6500F1C42F /* ContactView.swift */,
 			);
 			path = UI;
@@ -315,8 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D767625827CC7F6E00F3F9EA /* Launch Screen.storyboard in Resources */,
-				23A10FD727CD262300782B73 /* MOCK_DATA.json in Resources */,
+				2379C7F327CF2A1E00330D88 /* CORRUPTED_DATA.json in Resources */,
 				23F3C65C27C5DE6600F1C42F /* Preview Assets.xcassets in Resources */,
+				23AC7C4D27CE5900005E4516 /* MOCK_DATA.json in Resources */,
 				23F3C65927C5DE6600F1C42F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AC7C4F27CE5DA0005E4516 /* HomeView.swift in Sources */,
 				23F3C68727C6221700F1C42F /* ContactItem.swift in Sources */,
 				23F3C65727C5DE6500F1C42F /* ContactView.swift in Sources */,
 				23F3C68527C6211900F1C42F /* ContactManager.swift in Sources */,
@@ -349,7 +362,6 @@
 				23F3C65527C5DE6500F1C42F /* Contact_POCApp.swift in Sources */,
 				23A10FD227CCB7E700782B73 /* ContactsViewModel.swift in Sources */,
 				D767623C27CC78A700F3F9EA /* LocalStorage.swift in Sources */,
-				23F3C68D27C6788300F1C42F /* PersistentStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

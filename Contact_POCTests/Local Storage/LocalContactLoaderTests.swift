@@ -23,11 +23,12 @@ class LocalContactLoaderTests: XCTestCase {
         let (sut, spy) = makeSUT()
         sut.load(withQuantity: 0) { result in
             switch result {
-            case .success(let items):
-                XCTAssertEqual(items.count, 0)
-                
-            case .failure:
+            case .success:
                 XCTFail("Should not happen. Expected items to have 0 values returned.")
+                
+            case let .failure(error):
+                let expectedError = LocalContactLoader.Error.empty
+                XCTAssertEqual(error as NSError, expectedError as NSError)
             }
         }
         spy.complete(withContacts: [])
@@ -71,12 +72,13 @@ class LocalContactLoaderTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT() -> (LocalContactLoader, StorageSpy) {
+    private func makeSUT(file: StaticString = #filePath,
+                         line: UInt = #line) -> (LocalContactLoader, StorageSpy) {
         let spy = StorageSpy()
         let sut = LocalContactLoader(with: spy)
         
-        trackForMemoryLeaks(sut)
-        trackForMemoryLeaks(spy)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(spy, file: file, line: line)
         
         return (sut, spy)
     }
@@ -84,20 +86,23 @@ class LocalContactLoaderTests: XCTestCase {
     private func expect(_ sut: LocalContactLoader,
                         toCompleteWith expectedResult: LocalContactLoader.Result,
                         andQuantity expectedQuantity: Int = 0,
-                        when action: () -> Void) {
+                        when action: () -> Void,
+                        file: StaticString = #filePath,
+                        line: UInt = #line) {
         let exp = expectation(description: "Wait for completion")
         
         sut.load(withQuantity: expectedQuantity) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(items), .success(expectedItems)):
-                XCTAssertEqual(items, expectedItems)
+                XCTAssertEqual(items, expectedItems, file: file, line: line)
                 
             case let(.failure(receivedError as NSError),
                      .failure(expectedError as NSError)):
-                XCTAssertEqual(receivedError, expectedError)
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
             default:
-                XCTFail("Expected \(expectedResult), but got \(receivedResult) instead")
+                XCTFail("Expected \(expectedResult), but got \(receivedResult) instead",
+                        file: file, line: line)
             }
             exp.fulfill()
         }

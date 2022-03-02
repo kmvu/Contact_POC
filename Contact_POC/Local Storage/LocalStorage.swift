@@ -7,9 +7,25 @@
 
 import Foundation
 
+// MARK: - Persistent Storage
+
+public protocol PersistentStorage {
+    
+    /// Returns the first `quantity` number of contacts from storage
+    /// And it could be retrieved from any kind of persistence storage such as CoreData or Realm.
+    func retrieve(quantity: Int,
+                  completion: @escaping (Result<[ContactItem], Error>) -> Void)
+}
+
+// MARK: - Local Storage
+
 public class LocalStorage: PersistentStorage {
 
-    public init() {}
+    public let resourceName: String
+    
+    public init(resourceFileName: String = "") {
+        self.resourceName = resourceFileName
+    }
 
     /// Retrieve data from local storage. Either from a persistent one or from an assumed data like this as mentioned from requirement.
     public func retrieve(quantity: Int, completion: @escaping (Result<[ContactItem], Error>) -> Void) {
@@ -18,46 +34,19 @@ public class LocalStorage: PersistentStorage {
             return
         }
 
-        let resultContacts = Array(1...quantity).map { id in
-            ContactItem.data(id)
-        }
-        completion(.success(resultContacts))
-    }
-}
-
-// MARK: - JSON Samples data
-
-extension LocalStorage {
-    static func contactsList(quantity: Int) -> [ContactItem] {
-        guard let path = Bundle.main.path(forResource: "MOCK_DATA", ofType: "json") else {
-            return []
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: "json") else {
+            completion(.failure(LocalContactLoader.Error.empty))
+            return
         }
         
         do {
             let url = URL(fileURLWithPath: path)
             let data = try Data(contentsOf: url, options: .mappedIfSafe)
-            
             let jsonResult = try JSONDecoder().decode([ContactItem].self, from: data)
-            debugPrint(jsonResult)
             
-            return Array(jsonResult[0..<quantity])
+            completion(.success(Array(jsonResult[0..<quantity])))
         } catch {
-            
-            return []
+            completion(.failure(LocalContactLoader.Error.invalidFormat))
         }
-    }
-}
-
-// MARK: - Mocking for testing
-
-extension LocalStorage {
-    static let mockContacts: (Int) -> [ContactItem] = { quantity in
-        var contacts: [ContactItem] = []
-        
-        for id in 1...quantity {
-            let item = ContactItem.data(id)
-            contacts.append(item)
-        }
-        return contacts
     }
 }
