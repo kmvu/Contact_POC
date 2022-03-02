@@ -13,21 +13,22 @@ class LocalContactLoaderTests: XCTestCase {
     func test_load_sendExactQuantityNumber() {
         let expectedQuantity = 1
         
-        let (sut, spy) = makeSUT(quantity: expectedQuantity)
-        sut.load { _ in }
+        let (sut, spy) = makeSUT()
+        sut.load(withQuantity: expectedQuantity) { _ in }
         
         XCTAssertEqual(spy.quantity, expectedQuantity)
     }
     
     func test_load_returnsEmptyData() {
         let (sut, spy) = makeSUT()
-        sut.load { result in
+        sut.load(withQuantity: 0) { result in
             switch result {
-            case .success(let items):
-                XCTAssertEqual(items.count, 0)
-                
-            case .failure:
+            case .success:
                 XCTFail("Should not happen. Expected items to have 0 values returned.")
+                
+            case let .failure(error):
+                let expectedError = LocalContactLoader.Error.empty
+                XCTAssertEqual(error as NSError, expectedError as NSError)
             }
         }
         spy.complete(withContacts: [])
@@ -55,10 +56,10 @@ class LocalContactLoaderTests: XCTestCase {
         let expectedResult = success(expectedValue)
         
         // When
-        let (sut, spy) = makeSUT(quantity: expectedQuantity)
+        let (sut, spy) = makeSUT()
         
         // Then
-        expect(sut, toCompleteWith: expectedResult, when: {
+        expect(sut, toCompleteWith: expectedResult, andQuantity: expectedQuantity, when: {
             spy.complete(withContacts: expectedValue)
         })
     }
@@ -71,32 +72,37 @@ class LocalContactLoaderTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(quantity: Int = 0) -> (LocalContactLoader, StorageSpy) {
+    private func makeSUT(file: StaticString = #filePath,
+                         line: UInt = #line) -> (LocalContactLoader, StorageSpy) {
         let spy = StorageSpy()
-        let sut = LocalContactLoader(with: spy, quantity: quantity)
+        let sut = LocalContactLoader(with: spy)
         
-        trackForMemoryLeaks(sut)
-        trackForMemoryLeaks(spy)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(spy, file: file, line: line)
         
         return (sut, spy)
     }
     
     private func expect(_ sut: LocalContactLoader,
                         toCompleteWith expectedResult: LocalContactLoader.Result,
-                        when action: () -> Void) {
+                        andQuantity expectedQuantity: Int = 0,
+                        when action: () -> Void,
+                        file: StaticString = #filePath,
+                        line: UInt = #line) {
         let exp = expectation(description: "Wait for completion")
         
-        sut.load { receivedResult in
+        sut.load(withQuantity: expectedQuantity) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(items), .success(expectedItems)):
-                XCTAssertEqual(items, expectedItems)
+                XCTAssertEqual(items, expectedItems, file: file, line: line)
                 
             case let(.failure(receivedError as NSError),
                      .failure(expectedError as NSError)):
-                XCTAssertEqual(receivedError, expectedError)
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
             default:
-                XCTFail("Expected \(expectedResult), but got \(receivedResult) instead")
+                XCTFail("Expected \(expectedResult), but got \(receivedResult) instead",
+                        file: file, line: line)
             }
             exp.fulfill()
         }

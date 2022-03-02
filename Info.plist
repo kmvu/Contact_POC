@@ -20,5 +20,11 @@
 	<string>1</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen.storyboard</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>
