@@ -24,6 +24,8 @@
 		D767624C27CC7ED300F3F9EA /* Contact_POC_EndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767624B27CC7ED300F3F9EA /* Contact_POC_EndToEndTests.swift */; };
 		D767625827CC7F6E00F3F9EA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D767625727CC7F6E00F3F9EA /* Launch Screen.storyboard */; };
 		D767627127CC83DE00F3F9EA /* XCTestCase+MemoryLeaksTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FB8C9F27C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift */; };
+		D797293327CF5304005F17EF /* ContactsItem+mockingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797293227CF5304005F17EF /* ContactsItem+mockingData.swift */; };
+		D797293727CF530E005F17EF /* ContactsItem+mockingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797293227CF5304005F17EF /* ContactsItem+mockingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		D767624B27CC7ED300F3F9EA /* Contact_POC_EndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_POC_EndToEndTests.swift; sourceTree = "<group>"; };
 		D767624D27CC7ED300F3F9EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D767625727CC7F6E00F3F9EA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D797293227CF5304005F17EF /* ContactsItem+mockingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsItem+mockingData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				23FB8C9F27C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift */,
+				D797293227CF5304005F17EF /* ContactsItem+mockingData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -371,6 +375,7 @@
 			files = (
 				23F3C66627C5DE6600F1C42F /* LocalContactLoaderTests.swift in Sources */,
 				23FB8CA027C7758F00FC5B59 /* XCTestCase+MemoryLeaksTracking.swift in Sources */,
+				D797293327CF5304005F17EF /* ContactsItem+mockingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +385,7 @@
 			files = (
 				D767624C27CC7ED300F3F9EA /* Contact_POC_EndToEndTests.swift in Sources */,
 				D767627127CC83DE00F3F9EA /* XCTestCase+MemoryLeaksTracking.swift in Sources */,
+				D797293727CF530E005F17EF /* ContactsItem+mockingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
