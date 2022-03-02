@@ -20,11 +20,11 @@ struct ContactView: View {
                     .searchable(text: $searchText,
                                 placement: .navigationBarDrawer(displayMode: .always),
                                 prompt: "Search by name")
-                
             } else { // Fallback on earlier versions
                 ContactsList(contacts: contacts, searchText: $searchText)
                     .navigationBarSearch($searchText,
-                                         placeholder: "Search by name")
+                                         placeholder: "Search by name",
+                                         hidesSearchBarWhenScrolling: false)
             }
 
         case .failure:
