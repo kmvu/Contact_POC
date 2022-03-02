@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContactView: View {
     @ObservedObject var contactsLoader: LocalContactLoader
-    @Binding var quantity: String
     
     var body: some View {
         switch contactsLoader.contacts {
@@ -32,8 +31,7 @@ struct ContactView: View {
 #if !TESTING
 struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactView(contactsLoader: LocalContactLoader(with: LocalStorage()),
-                    quantity: .constant("10"))
+        ContactView(contactsLoader: LocalContactLoader(with: LocalStorage()))
     }
 }
 #endif
