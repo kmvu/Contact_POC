@@ -23,7 +23,8 @@ struct ContactView: View {
                 
             } else { // Fallback on earlier versions
                 ContactsList(contacts: contacts, searchText: $searchText)
-                    .navigationBarSearch($searchText)
+                    .navigationBarSearch($searchText,
+                                         placeholder: "Search by name")
             }
 
         case .failure:
