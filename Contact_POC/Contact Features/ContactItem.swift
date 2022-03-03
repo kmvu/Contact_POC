@@ -26,3 +26,15 @@ public struct ContactItem: Equatable, Identifiable, Codable, Hashable {
         self.address = address
     }
 }
+
+// MARK: - Mocking data for testing
+
+public extension ContactItem {
+    static var data: (Int) -> ContactItem = { id in
+        .init(id: id,
+              name: "testContact ",
+              phoneNumber: "00000000",
+              emailAddress: "test_email@abc.com",
+              address: "testing_address")
+    }
+}
