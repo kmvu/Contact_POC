@@ -77,7 +77,6 @@ fileprivate struct ContactCell: View {
         }
         
         var result: Text!
-        
         let components = string.components(separatedBy: matchingString)
         
         for index in components.indices {
