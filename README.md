@@ -18,7 +18,7 @@ Please look at the **Contact_POC_Tests** and **Contact_POC_EndToEndTests** files
 
 These two files are included in the **CI** scheme in order to be run under *Travis CI* and *Github Actions* (their CI service) for Continuous Integration (CI) capability. You can go into the *Actions* tab on this Github repo for more info.
 
-The CI pipelines will be triggered whenever new commits are pushed into the **main** and **develop** branch. Pull Request to **main* branch can also trigger these pipelines.
+The CI pipelines will be triggered whenever new commits are pushed into the **main** and **develop** branch. Pull Request to **main** branch can also trigger these pipelines.
 
 <img src="./screenshots/TravisCI.png" alt="Travis CI" width="750" />
 
@@ -69,8 +69,8 @@ The dataset downloaded will be in JSON format, and stored locally. It will then 
 
 However, due to time constraints, the app was built without the following known features:
 
-1. App was able to load 10000 contacts. However, with that many items, if we use the built-in Search in SwiftUI, along with the current logic, it will filter the result very slow if we attempt to use the app. I do have another solution though, which we can read directly from the dataset (JSON file in this case).
+1. App was able to load 10000 contacts. However, with that many items, if we use the built-in Search in SwiftUI, along with the current logic, it will filter the result kind of slow at the moment. I do have another solution though, which we can read directly from the dataset (JSON file in this case), and then filter them while reading. That way we don't have to load the entire dataset with 10K items, and then filter each time we search for new character. We can save the time much more with reading only the desired string and the matching items to display.
 
-2. App cannot highlight all the items, even though the items were matched correctly. Due to limitation in SwiftUI, the current implementation cannot fully highlight all the partial characters in all matched result. We will need to have another approach for this, probably using UIKit and port it over. But will take some more times.
+2. App cannot highlight all the items (only the first few items were highlighted), even though the items were matched and displayed correctly. Due to limitation in SwiftUI, the current implementation cannot fully highlight all the partial characters in all matched results. We will need to have another approach for this, probably using UIKit and port it over to SwiftUI. But it will take some more time.
 
-3. The Unit test for SwiftUI View can be fully covered to make it 100% coverage. However, will need more time to integrate and implement this. For this assignment, I only focused on the business logic as well as the Domain (Contacts features) layer, where it should be fully tested and reusable when needed. Since this is more important, I will leave it as is.
+3. The Unit test for SwiftUI View can be fully covered to make it 100% coverage. However, I will need more time to integrate and implement this. For this assignment, I only focused on the business logics as well as the Domain layer (Contacts features), where it should be fully tested and reusable in the future. Since this is more important, I will leave it as-is.
